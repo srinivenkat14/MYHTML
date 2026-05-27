@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Initiatives</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f3f4f6;
+        padding: 30px;
+        color: #1f2937;
+      }
+
+      /* MAIN GRID */
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: 20px;
+        align-items: start;
+      }
+
+      /* SECTION HEADER */
+      .sec-hdr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+      }
+
+      .sec-title {
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sec-title i {
+        color: #2563eb;
+      }
+
+      .sec-link {
+        border: none;
+        background: none;
+        color: #2563eb;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      /* SHOWCASE GRID */
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      /* SHOWCASE CARD */
+      .sc-card {
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+
+      .sc-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      /* THUMB */
+      .sc-thumb {
+        height: 150px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .t1 {
+        background: #bfdbfe;
+      }
+      .t2 {
+        background: #a7f3d0;
+      }
+
+      .play-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .play-btn i {
+        font-size: 24px;
+        color: #2563eb;
+        margin-left: 3px;
+      }
+
+      .aud-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .dur {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+      }
+
+      /* BODY */
+      .sc-body {
+        padding: 15px;
+      }
+
+      .sc-emp {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .avt {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .a1 {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .a2 {
+        background: #d1fae5;
+        color: #047857;
+      }
+
+      .sc-name {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .sc-dept {
+        font-size: 11px;
+        color: #6b7280;
+      }
+
+      .sc-title2 {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+      }
+
+      .tc {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .te {
+        background: #dcfce7;
+        color: #15803d;
+      }
+
+      .tw {
+        background: #ede9fe;
+        color: #6d28d9;
+      }
+
+      /* UPDATE PANEL */
+      .upd-list {
+        background: white;
+        border-radius: 14px;
+        border: 1px solid #e5e7eb;
+        padding: 20px;
+      }
+
+      .uitem {
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .uitem:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .utag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        margin-bottom: 8px;
+      }
+
+      .outlook {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .excel {
+        background: #dcfce7;
+        color: #15803d;
+      }
+
+      .teams {
+        background: #ede9fe;
+        color: #6d28d9;
+      }
+
+      .uitem h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      .uitem p {
+        font-size: 13px;
+        color: #6b7280;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .umeta {
+        font-size: 12px;
+        color: #9ca3af;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .main-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .showcase-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-grid">
+      <!-- LEFT -->
+      <section>
+        <div class="sec-hdr">
+          <div class="sec-title">
+            <i class="ti ti-award"></i>
+            Employee showcase
+          </div>
+
+          <button class="sec-link">See all</button>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- CARD -->
+          <article class="sc-card">
+            <div class="sc-thumb t1">
+              <span class="aud-badge">
+                <i class="ti ti-users"></i>
+                Finance
+              </span>
+
+              <div class="play-btn">
+                <i class="ti ti-player-play"></i>
+              </div>
+
+              <span class="dur">3:42</span>
+            </div>
+
+            <div class="sc-body">
+              <div class="sc-emp">
+                <div class="avt a1">SR</div>
+
+                <div>
+                  <div class="sc-name">Suresh Rajan</div>
+                  <div class="sc-dept">Finance · Analyst</div>
+                </div>
+              </div>
+
+              <div class="sc-title2">
+                Automating monthly reports with Copilot in Excel
+              </div>
+
+              <div class="tags">
+                <span class="tag tc">Copilot</span>
+                <span class="tag te">Excel</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD -->
+          <article class="sc-card">
+            <div class="sc-thumb t2">
+              <span class="aud-badge">
+                <i class="ti ti-globe"></i>
+                All staff
+              </span>
+
+              <div class="play-btn">
+                <i class="ti ti-player-play"></i>
+              </div>
+
+              <span class="dur">5:18</span>
+            </div>
+
+            <div class="sc-body">
+              <div class="sc-emp">
+                <div class="avt a2">PK</div>
+
+                <div>
+                  <div class="sc-name">Priya Krishnan</div>
+                  <div class="sc-dept">HR · People Ops</div>
+                </div>
+              </div>
+
+              <div class="sc-title2">
+                Drafting policy documents using Copilot in Word
+              </div>
+
+              <div class="tags">
+                <span class="tag tc">Copilot</span>
+                <span class="tag tw">Word</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD -->
+          <article class="sc-card">
+            <div class="sc-thumb t1">
+              <span class="aud-badge">
+                <i class="ti ti-users"></i>
+                Finance
+              </span>
+
+              <div class="play-btn">
+                <i class="ti ti-player-play"></i>
+              </div>
+
+              <span class="dur">3:42</span>
+            </div>
+
+            <div class="sc-body">
+              <div class="sc-emp">
+                <div class="avt a1">SR</div>
+
+                <div>
+                  <div class="sc-name">Suresh Rajan</div>
+                  <div class="sc-dept">Finance · Analyst</div>
+                </div>
+              </div>
+
+              <div class="sc-title2">
+                Automating monthly reports with Copilot in Excel
+              </div>
+
+              <div class="tags">
+                <span class="tag tc">Copilot</span>
+                <span class="tag te">Excel</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD -->
+          <article class="sc-card">
+            <div class="sc-thumb t2">
+              <span class="aud-badge">
+                <i class="ti ti-globe"></i>
+                All staff
+              </span>
+
+              <div class="play-btn">
+                <i class="ti ti-player-play"></i>
+              </div>
+
+              <span class="dur">5:18</span>
+            </div>
+
+            <div class="sc-body">
+              <div class="sc-emp">
+                <div class="avt a2">PK</div>
+
+                <div>
+                  <div class="sc-name">Priya Krishnan</div>
+                  <div class="sc-dept">HR · People Ops</div>
+                </div>
+              </div>
+
+              <div class="sc-title2">
+                Drafting policy documents using Copilot in Word
+              </div>
+
+              <div class="tags">
+                <span class="tag tc">Copilot</span>
+                <span class="tag tw">Word</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <section>
+        <div class="sec-hdr">
+          <div class="sec-title">
+            <i class="ti ti-sparkles"></i>
+            Copilot 365 — Blogs
+          </div>
+
+          <button class="sec-link">See all</button>
+        </div>
+
+        <div class="upd-list">
+          <div class="uitem">
+            <span class="utag outlook"> Outlook </span>
+
+            <h4>Copilot now drafts full email threads in Outlook</h4>
+
+            <p>Compose complete reply chains from a single instruction.</p>
+
+            <div class="umeta">
+              <i class="ti ti-calendar"></i>
+              14 May 2025
+            </div>
+          </div>
+
+          <div class="uitem">
+            <span class="utag excel"> Excel </span>
+
+            <h4>Formula suggestions now explain reasoning</h4>
+
+            <p>Copilot shows step-by-step formula logic.</p>
+
+            <div class="umeta">
+              <i class="ti ti-calendar"></i>
+              10 May 2025
+            </div>
+          </div>
+
+          <div class="uitem">
+            <span class="utag teams"> Teams </span>
+
+            <h4>Meeting recap includes attendee action items</h4>
+
+            <p>Summaries now auto-tag tasks by attendee.</p>
+
+            <div class="umeta">
+              <i class="ti ti-calendar"></i>
+              6 May 2025
+            </div>
+          </div>
+
+          <div class="uitem">
+            <span class="utag outlook"> Outlook </span>
+
+            <h4>Copilot now drafts full email threads in Outlook</h4>
+
+            <p>Compose complete reply chains from a single instruction.</p>
+
+            <div class="umeta">
+              <i class="ti ti-calendar"></i>
+              14 May 2025
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
